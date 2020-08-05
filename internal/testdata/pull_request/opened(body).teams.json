@@ -1,0 +1,28 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username opened PR #61",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** opened pull request #61: **wip/e2e\\-reconcile** into **dev**",
+        "text": "This includes branch extra-island (rebased), and thus the following notable changes:\r\n- Send all licenses through scheduler\r\n- Run fasttrack after backtrack times out\r\n- Push results for every license that makes it through reconcile\r\n- Reuse already-loaded shared data with a simple LRU cache (there's definitely room to improve evictions algorithm, e.g. by tracking how long or how many reconciles a shared set has gone unused)\r\n- Add a metric tracking the hit ratio of that cache (@username: are you in a good spot to add this, if we want it? See a506350)\r\n\r\nThe upshot? We now finish collecting and streaming results out for a measurement, and we do so faster than we ever did before. We still have a lot of missing functionality and room for improvement."
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "View #61",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "https://github.com/orgname/reponame/pull/61"
+          }
+        ]
+      }
+    ]
+  }
+}

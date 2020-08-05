@@ -1,0 +1,15 @@
+{
+  "WORKFLOW": {
+    "Summary": "username merged PR #51",
+    "ThemeColor": "#6e5494",
+    "Repository": "orgname/reponame",
+    "Avatar": "https://avatar.example.net/image",
+    "Text": "**username** merged pull request #51: **wip/deployment\\-changes** into **dev**",
+    "Action": [
+      {
+        "Name": "View #51",
+        "URL": "https://github.com/orgname/reponame/pull/51"
+      }
+    ]
+  }
+}

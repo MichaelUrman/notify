@@ -1,0 +1,77 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username pushed dev",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** pushed 1 commit to **dev**",
+        "facts": [
+          {
+            "name": "090e4f202",
+            "value": "**Adjust infra dev setup for table\\_row\\_count** [🔍](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+          }
+        ]
+      }
+    ]
+  },
+  "PASSED": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "WorkflowName passed for dev",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "✔ WorkflowName passed for **dev**",
+        "text": "✔ Workflow **WorkflowName** passed for **dev** commit [090e4f202](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+      }
+    ]
+  },
+  "FAILED": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "WorkflowName failed for dev",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "❌ WorkflowName failed for **dev**",
+        "text": "❌ Workflow **WorkflowName** failed for **dev** commit [090e4f202](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+      }
+    ]
+  },
+  "CANCEL": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "WorkflowName was cancelled for dev",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "🚫 WorkflowName was cancelled for **dev**",
+        "text": "🚫 Workflow **WorkflowName** was cancelled for **dev** commit [090e4f202](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+      }
+    ]
+  },
+  "SKIPPED": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "WorkflowName was skipped for dev",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "◌ WorkflowName was skipped for **dev**",
+        "text": "◌ Workflow **WorkflowName** was skipped for **dev** commit [090e4f202](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+      }
+    ]
+  }
+}

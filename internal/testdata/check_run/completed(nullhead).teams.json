@@ -1,0 +1,17 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "Build Passed",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activitySubtitle": "Travis CI - Pull Request",
+        "activityText": "Build Passed",
+        "text": "<a href='https://travis-ci.com/github/orgname/reponame/builds/169084161'><img src='https://travis-ci.com/images/stroke-icons/icon-passed.png' height='11'> The build</a> **passed**, just like the previous build."
+      }
+    ]
+  }
+}

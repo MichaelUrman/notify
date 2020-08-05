@@ -1,0 +1,28 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username opened draft PR #63",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** opened draft pull request #63: **wip/migrate\\-chargethreshold** into **dev**",
+        "text": "I'm creating this PR as a placeholder for discussing migration support. The changes below include some arbitrary cleanups, utility enhancements, and one small schema migration. Let's focus on the latter two aspects.\r\n\r\n**Utility enhancements**\r\n- Makefile: gogenerate ./tools/fnmpdb\r\n- schema.go: add `flags:\"omit\"`, FieldIndex\r\n- design-types.in: use FieldIndex\r\n\r\n**Migration**\r\n- LR_SoftwareLicense.sql: read new field\r\n- reconcile, model: use ChargeThresholdDate, retire VirtualApplicationAccessMaximumUsagePeriod\r\n- version.go: add new, drop old\r\n- (*estate.Reader).migrate(): handle (then remove) field migration\r\n\r\nHowever, this does not handle versioning or migrating at the ingest or scheduler APIs, which may be where this should happen."
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "View #63",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "https://github.com/orgname/reponame/pull/63"
+          }
+        ]
+      }
+    ]
+  }
+}

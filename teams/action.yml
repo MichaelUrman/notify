@@ -1,0 +1,16 @@
+name: Workflow Teams Webhook
+inputs:
+  hookurl:
+    description: Microsoft Teams incoming Webhook URL
+    required: true
+  lang:
+    description: Language tag (like en-US) to use for Teams messages
+    required: false
+    default: 'en-US'
+  job-status:
+    description: Report this job status, instead of the workflow, for test results
+    required: false
+
+runs:
+  using: 'node12'
+  main: 'index.js'

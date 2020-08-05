@@ -1,0 +1,22 @@
+on:
+  push:
+  release:
+  check_run:
+  create:
+  delete:
+  public:
+  pull_request:
+  pull_request_review:
+  pull_request_review_comment:
+
+jobs:
+  notify:
+    runs-on: 'ubuntu-latest'
+    name: "Notify Microsoft Teams"
+    steps:
+    - uses: actions/setup-go@v2
+      with:
+        go-version: '~1.14'
+    - uses: MichaelUrman/notify/teams@tip
+      with:
+        hookurl: ${{ secrets.MSTEAMS_NOTIFY_HOOK_URL }}

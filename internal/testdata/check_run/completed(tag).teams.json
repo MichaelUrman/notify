@@ -1,0 +1,17 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "dev: Build Passed",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activitySubtitle": "Travis CI - Branch",
+        "activityText": "**dev** Build Passed",
+        "text": "<a href='https://travis-ci.com/orgname/reponame/builds/141429518'><img src='https://travis-ci.com/images/stroke-icons/icon-passed.png' height='11'> The build</a> **passed**."
+      }
+    ]
+  }
+}

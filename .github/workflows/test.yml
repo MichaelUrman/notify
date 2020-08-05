@@ -1,0 +1,21 @@
+name: 'Integration Test'
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: 'ubuntu-latest'
+    name: "Test code"
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+    - uses: actions/setup-go@v2
+      with:
+        go-version: '~1.14'
+    - name: "Test"
+      run: go test ./...
+    - uses: MichaelUrman/notify/teams@tip
+      if: always()
+      with:
+        hookurl: ${{ secrets.MSTEAMS_NOTIFY_HOOK_URL }}
+        job-status: ${{ job.status }}

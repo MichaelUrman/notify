@@ -1,0 +1,33 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username pushed wip/resultsservice_v2",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** pushed 1 commit to **wip/resultsservice\\_v2**",
+        "facts": [
+          {
+            "name": "6956c0926",
+            "value": "**Save result per license to S3, Fix sync issues for load lice** [🔍](https://github.com/orgname/reponame/commit/6956c09262561fc74ee89f169d4b13f762022b16)"
+          }
+        ]
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "Compare dev...wip/resultsservice_v2",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "https://github.com/orgname/reponame/compare/wip/resultsservice_v2"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username reviewed #55",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** submitted a review on **#55**",
+        "text": "username requested changes for [#55: Wip/reconcile push results](https://github.com/orgname/reponame/pull/55)"
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "View Review",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "https://github.com/orgname/reponame/pull/55#pullrequestreview-326244437"
+          }
+        ]
+      }
+    ]
+  }
+}

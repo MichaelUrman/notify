@@ -1,0 +1,27 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username tagged v1.2",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** created tag **v1\\.2**"
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "View on GitHub",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "https://github.com/orgname/reponame/tree/v1.2"
+          }
+        ]
+      }
+    ]
+  }
+}

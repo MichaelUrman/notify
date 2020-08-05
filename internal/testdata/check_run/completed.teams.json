@@ -1,0 +1,17 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "wip/resultsservice_v2: Build Passed",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activitySubtitle": "Travis CI - Branch",
+        "activityText": "**wip/resultsservice\\_v2** Build Passed",
+        "text": "<a href='https://travis-ci.com/orgname/reponame/builds/137031409'><img src='https://travis-ci.com/images/stroke-icons/icon-passed.png' height='11'> The build</a> **passed**. This is a change from the previous build, which **errored**."
+      }
+    ]
+  }
+}

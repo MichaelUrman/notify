@@ -1,0 +1,21 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username pushed dev",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** pushed 1 commit to **dev**",
+        "facts": [
+          {
+            "name": "ea30765a6",
+            "value": "**Replace VersionHashKey related checks with tests** [🔍](https://github.com/orgname/reponame/commit/ea30765a6742d2acb3931c0dcdb3b4ed7ae72d60)"
+          }
+        ]
+      }
+    ]
+  }
+}

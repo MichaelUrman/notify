@@ -1,0 +1,47 @@
+{
+  "WORKFLOW": {
+    "Summary": "username pushed dev",
+    "ThemeColor": "#6e5494",
+    "Repository": "orgname/reponame",
+    "Avatar": "https://avatar.example.net/image",
+    "Text": "**username** pushed 1 commit to **dev**",
+    "Fact": [
+      {
+        "Name": "090e4f202",
+        "Value": "**Adjust infra dev setup for table\\_row\\_count** [🔍](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+      }
+    ]
+  },
+  "PASSED": {
+    "Summary": "WorkflowName passed for dev",
+    "ThemeColor": "#6e5494",
+    "Repository": "orgname/reponame",
+    "Avatar": "https://avatar.example.net/image",
+    "Text": "✔ WorkflowName passed for **dev**",
+    "Body": "✔ Workflow **WorkflowName** passed for **dev** commit [090e4f202](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+  },
+  "FAILED": {
+    "Summary": "WorkflowName failed for dev",
+    "ThemeColor": "#6e5494",
+    "Repository": "orgname/reponame",
+    "Avatar": "https://avatar.example.net/image",
+    "Text": "❌ WorkflowName failed for **dev**",
+    "Body": "❌ Workflow **WorkflowName** failed for **dev** commit [090e4f202](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+  },
+  "CANCEL": {
+    "Summary": "WorkflowName was cancelled for dev",
+    "ThemeColor": "#6e5494",
+    "Repository": "orgname/reponame",
+    "Avatar": "https://avatar.example.net/image",
+    "Text": "🚫 WorkflowName was cancelled for **dev**",
+    "Body": "🚫 Workflow **WorkflowName** was cancelled for **dev** commit [090e4f202](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+  },
+  "SKIPPED": {
+    "Summary": "WorkflowName was skipped for dev",
+    "ThemeColor": "#6e5494",
+    "Repository": "orgname/reponame",
+    "Avatar": "https://avatar.example.net/image",
+    "Text": "◌ WorkflowName was skipped for **dev**",
+    "Body": "◌ Workflow **WorkflowName** was skipped for **dev** commit [090e4f202](https://github.com/orgname/reponame/commit/090e4f202de2627379285c853b73a7ef693f5b7b)"
+  }
+}
