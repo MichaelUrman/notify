@@ -8,17 +8,16 @@ import (
 	"os"
 	"strings"
 
-	action "github.com/sethvargo/go-githubactions"
 	"golang.org/x/text/message"
 
 	"github.com/MichaelUrman/notify/internal/event"
 )
 
 func LoadEvent(ctx context.Context) (*event.Detail, error) {
-	lang := message.MatchLanguage(action.GetInput("lang"), "en")
+	lang := message.MatchLanguage(Actions.Input("lang"), "en")
 	pr := message.NewPrinter(lang)
 
-	status := action.GetInput("job-status")
+	status := Actions.Input("job-status")
 	if status != "" {
 		return ReportWorkflowStatus(ctx, pr, status)
 	}

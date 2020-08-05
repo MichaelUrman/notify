@@ -42,8 +42,8 @@ type Target struct {
 	URI string `json:"uri"`
 }
 
-func (r Request) Submit(ctx context.Context) error {
-	return notifier.PostJSON(ctx, r)
+func (r Request) Submit(ctx context.Context, url string) error {
+	return notifier.PostJSON(ctx, url, r)
 }
 
 func BuildSubmitter(ctx context.Context, d *event.Detail) event.Submitter {

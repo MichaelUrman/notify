@@ -3,7 +3,7 @@ package event
 import "context"
 
 type Submitter interface {
-	Submit(context.Context) error
+	Submit(context.Context, string) error
 }
 
 type Detail struct {

@@ -16,6 +16,7 @@ import (
 
 func main() {
 	err := notifier.Main(
+		github.Actions,
 		github.LoadEvent,
 		teams.BuildSubmitter,
 	)

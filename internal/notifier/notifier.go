@@ -11,8 +11,6 @@ import (
 	"os"
 	"time"
 
-	action "github.com/sethvargo/go-githubactions"
-
 	"github.com/MichaelUrman/notify/internal/event"
 )
 
@@ -20,24 +18,23 @@ const hookUrlInput = "hookurl"
 
 type EventLoader func(context.Context) (*event.Detail, error)
 type EventPreparer func(context.Context, *event.Detail) event.Submitter
+type Environment interface {
+	Dump(string, string)
+	Debugf(string, ...interface{})
+	Fatalf(string, ...interface{})
+	Secret(string) string
+}
 
-func Main(load EventLoader, prepare EventPreparer) (err error) {
+func Main(env Environment, load EventLoader, prepare EventPreparer) (err error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 
 	defer func() {
 		if err != nil {
-			action.Group("payload")
-			payload, err := ioutil.ReadFile(os.Getenv("GITHUB_EVENT_PATH"))
-			if err != nil {
-				action.Debugf("reading payload: %v", err)
-			} else {
-				action.Debugf("%s", payload)
-				action.EndGroup()
-			}
-			action.Fatalf("handling event: %v", err)
+			env.Dump("payload", os.Getenv("GITHUB_EVENT_PATH"))
+			env.Fatalf("handling event: %v", err)
 		} else {
-			action.Debugf("No message sent")
+			env.Debugf("No message sent")
 		}
 	}()
 
@@ -50,17 +47,17 @@ func Main(load EventLoader, prepare EventPreparer) (err error) {
 		return nil
 	}
 
+	url := env.Secret(hookUrlInput)
+	if url == "" {
+		return fmt.Errorf("missing input %q", hookUrlInput)
+	}
+
 	req := prepare(ctx, detail)
-	return req.Submit(ctx)
+	return req.Submit(ctx, url)
 }
 
 // PostJSON encodes req to JSON, and Posts it.
-func PostJSON(ctx context.Context, data interface{}) error {
-	hook := action.GetInput(hookUrlInput)
-	if hook == "" {
-		action.Fatalf("missing input %q", hookUrlInput)
-	}
-	action.AddMask(hook)
+func PostJSON(ctx context.Context, url string, data interface{}) error {
 
 	body := bytes.NewBuffer(nil)
 	enc := json.NewEncoder(body)
@@ -69,7 +66,7 @@ func PostJSON(ctx context.Context, data interface{}) error {
 		return fmt.Errorf("encoding JSON: %w", err)
 	}
 
-	return Post(ctx, nil, hook, body)
+	return Post(ctx, nil, url, body)
 }
 
 func Post(ctx context.Context, cli *http.Client, url string, body io.Reader) error {
