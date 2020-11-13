@@ -237,6 +237,13 @@ func (ev *PullRequestReview) Event(p *message.Printer) *event.Detail {
 			Body:    p.Sprintf(msgUserReviewState, username, verb, ev.PullRequest.Number, md(ev.PullRequest.Title), ev.PullRequest.URL),
 			Action:  []event.Action{{Name: p.Sprint(viewReview), URL: ev.Review.URL}},
 		})
+	case "dismissed":
+		return fillEvent(p, ev.Common, event.Detail{
+			Summary: p.Sprintf(message.Key(msgDismissedReview, "%s dismissed #%#d review"), username, ev.PullRequest.Number),
+			Text:    p.Sprintf(msgUserDismissedReview, username, ev.PullRequest.Number),
+			Body:    p.Sprintf(msgUserReviewState, username, verb, ev.PullRequest.Number, md(ev.PullRequest.Title), ev.PullRequest.URL),
+			Action:  []event.Action{{Name: p.Sprint(viewReview), URL: ev.Review.URL}},
+		})
 	}
 	return nil
 }
@@ -369,6 +376,7 @@ func (s md) Format(f fmt.State, c rune) {
 func branch(ref string) string {
 	return strings.TrimPrefix(ref, "refs/heads/")
 }
+
 func tag(ref string) string {
 	return strings.TrimPrefix(ref, "refs/tags/")
 }

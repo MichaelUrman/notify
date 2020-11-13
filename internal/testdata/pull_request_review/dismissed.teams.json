@@ -1,0 +1,28 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username dismissed #251 review",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** dismissed a review on **#251**",
+        "text": "username dismissed a review of [#251: FNMA\\-562: Use blah blah blah](https://github.com/orgname/reponame/pull/251)"
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "View Review",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "https://github.com/orgname/reponame/pull/251#pullrequestreview-530014485"
+          }
+        ]
+      }
+    ]
+  }
+}

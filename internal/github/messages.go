@@ -23,16 +23,19 @@ const (
 	msgUserVerbedPRTitle       = "%#+s %m #%#d: %#+s"
 	msgUserReviewState         = "%#s %m [#%#d: %#s](%s)"
 	msgUserEditedReview        = "%#+s edited a review on **#%#d**"
+	msgUserDismissedReview     = "%#+s dismissed a review on **#%#d**"
 	msgUserSubmittedReview     = "%#+s submitted a review on **#%#d**"
 	msgVerbedPR                = "verbed pr"
 	msgReviewedPR              = "reviewed pr"
 	msgEditedReview            = "edited review"
+	msgDismissedReview         = "dismissed review"
 	msgWorkflowStatusSummary   = "status||job|summary"
 	msgWorkflowStatus          = "status||job"
 	msgWorkflowDetail          = "detail||job"
 
 	prChangesRequested    = "changes_requested||review"
 	prEditedReview        = "edited||review"
+	prDismissedReview     = "dismissed||review"
 	prCommented           = "commented||review"
 	prOpened              = "opened||pr"
 	prOpenedDraft         = "opened||pr|draft"
@@ -70,6 +73,7 @@ func init() {
 	_ = message.SetString(language.English, branchForced, "force-pushed")
 	_ = message.SetString(language.English, prChangesRequested, "requested changes for")
 	_ = message.SetString(language.English, prEditedReview, "edited a review of")
+	_ = message.SetString(language.English, prDismissedReview, "dismissed a review of")
 	_ = message.SetString(language.English, prCommented, "commented on")
 	_ = message.SetString(language.English, prOpened, "opened pull request")
 	_ = message.SetString(language.English, prOpenedDraft, "opened draft pull request")
