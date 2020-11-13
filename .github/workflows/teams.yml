@@ -1,3 +1,4 @@
+name: "Notify (Teams)"
 on:
   push:
   release:
@@ -20,3 +21,11 @@ jobs:
     - uses: MichaelUrman/notify/teams@tip
       with:
         hookurl: ${{ secrets.MSTEAMS_NOTIFY_HOOK_URL }}
+
+    # swap out always() for failed() to avoid useless artifacts
+    - uses: actions/upload-artifact@v2
+      if: ${{ always() }}
+      with:
+        name: "${{ github.event_name }}-${{ github.run_id }}.json"
+        path: "${{ github.event_path }}"
+        retention-days: 7
