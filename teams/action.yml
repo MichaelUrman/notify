@@ -12,5 +12,7 @@ inputs:
     required: false
 
 runs:
-  using: 'node12'
-  main: 'index.js'
+  using: 'composite'
+  steps:
+    - run: go run ../cmd/notify-teams
+      shell: bash
