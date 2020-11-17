@@ -89,6 +89,7 @@ type CheckRun struct {
 				AvatarURL string `json:"avatar_url"`
 			}
 			HeadBranch string `json:"head_branch"`
+			HeadSHA    string `json:"head_sha"`
 		} `json:"check_suite"`
 	} `json:"check_run"`
 }
@@ -101,6 +102,9 @@ func (ev CheckRun) Event(p *message.Printer) *event.Detail {
 			username = ev.CheckRun.Name
 		}
 		head := md(branch(ev.CheckRun.CheckSuite.HeadBranch))
+		if head == "" {
+			head = md(ev.CheckRun.CheckSuite.HeadSHA[:9])
+		}
 		return fillEvent(p, ev.Common, event.Detail{
 			Summary:  strings.TrimPrefix(fmt.Sprintf("%s: %s", head, md(ev.CheckRun.Output.Title)), ": "),
 			Username: username,
