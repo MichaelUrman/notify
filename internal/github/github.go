@@ -228,9 +228,13 @@ func (ev *PullRequestReview) Event(p *message.Printer) *event.Detail {
 	verb := ev.Review.State + "||review"
 	switch ev.Action {
 	case "submitted":
+		msgSummary, msgText := msgReviewedPR, msgUserSubmittedReview
+		if ev.Review.State == "commented" {
+			msgSummary, msgText = msgCommentedPR, msgUserCommentedOn
+		}
 		return fillEvent(p, ev.Common, event.Detail{
-			Summary: p.Sprintf(message.Key(msgReviewedPR, "%s reviewed #%#d"), username, ev.PullRequest.Number),
-			Text:    p.Sprintf(msgUserSubmittedReview, username, ev.PullRequest.Number),
+			Summary: p.Sprintf(message.Key(msgSummary, "%s reviewed #%#d"), username, ev.PullRequest.Number),
+			Text:    p.Sprintf(msgText, username, ev.PullRequest.Number),
 			Body:    p.Sprintf(msgUserReviewState, username, verb, ev.PullRequest.Number, md(ev.PullRequest.Title), ev.PullRequest.URL),
 			Action:  []event.Action{{Name: p.Sprint(viewReview), URL: ev.Review.URL}},
 		})

@@ -1,0 +1,28 @@
+{
+  "WORKFLOW": {
+    "@type": "MessageCard",
+    "@context": "https://schema.org/extensions",
+    "summary": "username commented on #254",
+    "themeColor": "#6e5494",
+    "sections": [
+      {
+        "activityImage": "https://avatar.example.net/image",
+        "activityTitle": "orgname/reponame",
+        "activityText": "**username** commented on **#254**",
+        "text": "username commented on [#254: feat\\(blah\\): Blah](https://github.com/orgname/reponame/pull/254)"
+      }
+    ],
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "View Review",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "https://github.com/orgname/reponame/pull/254#pullrequestreview-534678413"
+          }
+        ]
+      }
+    ]
+  }
+}

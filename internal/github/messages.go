@@ -25,8 +25,10 @@ const (
 	msgUserEditedReview        = "%#+s edited a review on **#%#d**"
 	msgUserDismissedReview     = "%#+s dismissed a review on **#%#d**"
 	msgUserSubmittedReview     = "%#+s submitted a review on **#%#d**"
+	msgUserCommentedOn         = "%#+s commented on **#%#d**"
 	msgVerbedPR                = "verbed pr"
 	msgReviewedPR              = "reviewed pr"
+	msgCommentedPR             = "commented pr"
 	msgEditedReview            = "edited review"
 	msgDismissedReview         = "dismissed review"
 	msgWorkflowStatusSummary   = "status||job|summary"
@@ -88,6 +90,7 @@ func init() {
 	_ = message.SetString(language.English, deleteTag, "%s untagged %s")
 	_ = message.SetString(language.English, msgVerbedPR, "%s %m #%#d")
 	_ = message.SetString(language.English, msgReviewedPR, "%s reviewed #%#d")
+	_ = message.SetString(language.English, msgCommentedPR, "%s commented on #%#d")
 	_ = message.SetString(language.English, msgEditedReview, "%s edited #%#d review")
 	_ = message.SetString(language.English, jobSuccess, "passed")
 	_ = message.SetString(language.English, jobFailure, "failed")
